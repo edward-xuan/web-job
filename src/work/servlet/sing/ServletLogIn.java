@@ -4,11 +4,12 @@ import work.tool.sing.classes.UserLog;
 import work.tool.sing.property.UserProperty;
 
 import javax.servlet.*;
+import javax.servlet.annotation.*;
 import javax.servlet.http.*;
 import java.io.IOException;
 import java.util.Base64;
 
-//@WebServlet(name = "ServletLogIn", value = "/log")
+@WebServlet(name = "ServletLogIn", value = "/log")
 public class ServletLogIn extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doGet(request, response);
