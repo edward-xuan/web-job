@@ -5,11 +5,12 @@ import work.tool.sing.interfaces.UserLogItf;
 import work.tool.sing.property.UserProperty;
 
 import javax.servlet.*;
+import javax.servlet.annotation.*;
 import javax.servlet.http.*;
 import java.io.IOException;
 import java.util.Base64;
 
-//@WebServlet(name = "ServletRegister", value = "/reg")
+@WebServlet(name = "ServletRegister", value = "/reg")
 public class ServletRegister extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String username = request.getParameter("username");
