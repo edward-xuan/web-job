@@ -43,7 +43,6 @@ public class JDBCUtil {
             Class.forName(driverClass);
             // 建立链接
             conn = DriverManager.getConnection(url, name, password);
-            System.out.println(conn);
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         }
