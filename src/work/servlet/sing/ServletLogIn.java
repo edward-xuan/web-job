@@ -9,7 +9,7 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.util.Base64;
 
-@WebServlet(name = "ServletLogIn", value = "/log")
+//@WebServlet(name = "ServletLogIn", value = "/log")
 public class ServletLogIn extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doGet(request, response);
