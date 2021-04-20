@@ -24,8 +24,11 @@ public class ServletRegister extends HttpServlet {
 
         // 注册失败，重新注册，进入注册界面
         if (!b) {
-            response.sendRedirect("register.html");
+            response.sendRedirect("/lr/after/loginFa.html");
+        } else {
+            response.sendRedirect("/lr/after/loginSuc.html");
         }
+
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

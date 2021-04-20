@@ -25,7 +25,9 @@ public class ServletLogIn extends HttpServlet {
 
         // 登录失败，重新登录, 进入登录界面
         if (!b) {
-            response.sendRedirect("login.html");
+            response.sendRedirect("/lr/after/loginFa.html");
+        } else {
+            response.sendRedirect("/lr/after/loginSuc.html");
         }
     }
 }
