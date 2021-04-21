@@ -1,6 +1,6 @@
-package work.tool.sing.interfaces;
+package work.tool.interfaces.log;
 
-import work.tool.sing.property.UserProperty;
+import work.tool.property.log.UserProperty;
 
 import java.util.ArrayList;
 

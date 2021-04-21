@@ -1,7 +1,7 @@
 package work.servlet.sing;
 
-import work.tool.sing.classes.UserLog;
-import work.tool.sing.property.UserProperty;
+import work.tool.classes.log.UserLog;
+import work.tool.property.log.UserProperty;
 
 import javax.servlet.*;
 import javax.servlet.annotation.*;
@@ -12,10 +12,6 @@ import java.util.Base64;
 @WebServlet(name = "ServletLogIn", value = "/log")
 public class ServletLogIn extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doGet(request, response);
-    }
-
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String email = request.getParameter("email");
         String password = request.getParameter("password");
         password = Base64.getEncoder().encodeToString(password.getBytes());
@@ -29,5 +25,9 @@ public class ServletLogIn extends HttpServlet {
         } else {
             response.sendRedirect("/lr/after/loginSuc.html");
         }
+    }
+
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.sendRedirect("/lr/form/login.html");
     }
 }

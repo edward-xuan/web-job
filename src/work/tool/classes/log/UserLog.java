@@ -1,15 +1,14 @@
-package work.tool.sing.classes;
+package work.tool.classes.log;
 
 import work.sql.JDBCUtil;
-import work.tool.sing.interfaces.UserLogItf;
-import work.tool.sing.property.UserProperty;
+import work.tool.interfaces.log.UserLogItf;
+import work.tool.property.log.UserProperty;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.List;
 
 public class UserLog implements UserLogItf {
     UserProperty up = null;
@@ -93,12 +92,12 @@ public class UserLog implements UserLogItf {
             rs = ps.executeQuery();
             ArrayList<UserProperty> list = new ArrayList<>();
             while (rs.next()) {
-                list.add(new UserProperty(
-                        rs.getString("username"),
-                        rs.getString("email"),
-                        rs.getString("password"),
-                        rs.getInt("level")
-                ));
+                UserProperty up = new UserProperty();
+                up.setUsername(rs.getString("username"));
+                up.setEmail(rs.getString("email"));
+                up.setPassword(rs.getString("password"));
+                up.setLevel(rs.getInt("level"));
+                list.add(up);
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();

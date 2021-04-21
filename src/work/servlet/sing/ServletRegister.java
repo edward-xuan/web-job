@@ -1,8 +1,8 @@
 package work.servlet.sing;
 
-import work.tool.sing.classes.UserLog;
-import work.tool.sing.interfaces.UserLogItf;
-import work.tool.sing.property.UserProperty;
+import work.tool.classes.log.UserLog;
+import work.tool.interfaces.log.UserLogItf;
+import work.tool.property.log.UserProperty;
 
 import javax.servlet.*;
 import javax.servlet.annotation.*;
@@ -32,6 +32,6 @@ public class ServletRegister extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        System.out.println(123);
+        response.sendRedirect("/lr/form/register.html");
     }
 }
